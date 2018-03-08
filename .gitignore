@@ -1,0 +1,20 @@
+#xcode user specific
+xcuserdata
+
+#OS X Stuff
+.DS_Store
+
+# Build output
+build/
+*.o
+*.LinkFileList
+*.hmap
+
+# Backup files
+*~.nib/
+*.swp
+*~
+*.dat
+*.dep
+
+Pods/
