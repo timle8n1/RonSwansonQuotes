@@ -11,9 +11,9 @@ import Foundation
 protocol NetInjected { }
 
 struct NetInjector {
-    static var ronSwansonQuotesNet: RonSwansonQuotesNet = RonSwansonQuotesMoya()
+    static var ronSwansonQuotesNet: RonSwansonQuotesNet = RonSwansonQuotesURLSession()
 }
 
 extension NetInjected {
-    var ronSwansonQuotesNet: RonSwansonQuotesNet { get { return NetInjector.ronSwansonQuotesNet }}
+    var ronSwansonQuotesNet: RonSwansonQuotesNet { return NetInjector.ronSwansonQuotesNet }
 }

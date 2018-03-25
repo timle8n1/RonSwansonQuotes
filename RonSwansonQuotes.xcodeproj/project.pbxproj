@@ -12,8 +12,10 @@
 		E75AAE35205182AF0028A233 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E75AAE33205182AF0028A233 /* Main.storyboard */; };
 		E75AAE37205182AF0028A233 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75AAE36205182AF0028A233 /* Assets.xcassets */; };
 		E75AAE3A205182AF0028A233 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E75AAE38205182AF0028A233 /* LaunchScreen.storyboard */; };
+		E762DDEE2067F0AF008B5E23 /* QuotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E762DDED2067F0AF008B5E23 /* QuotesView.swift */; };
+		E762DDF12067F532008B5E23 /* RonSwansonQuotesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E762DDF02067F532008B5E23 /* RonSwansonQuotesService.swift */; };
+		E762DDF32067F5A9008B5E23 /* ServiceInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E762DDF22067F5A9008B5E23 /* ServiceInjection.swift */; };
 		E76F344020518349004FAD75 /* QuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F343E20518349004FAD75 /* QuotesViewController.swift */; };
-		E76F344120518349004FAD75 /* QuotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F343F20518349004FAD75 /* QuotesViewModel.swift */; };
 		E76F34432051834F004FAD75 /* NetInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F34422051834F004FAD75 /* NetInjection.swift */; };
 		E76F344A20518356004FAD75 /* RonSwansonQuotesMoya.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F344520518356004FAD75 /* RonSwansonQuotesMoya.swift */; };
 		E76F344B20518356004FAD75 /* RonSwansonQuotesNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F344620518356004FAD75 /* RonSwansonQuotesNet.swift */; };
@@ -31,8 +33,10 @@
 		E75AAE36205182AF0028A233 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E75AAE39205182AF0028A233 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E75AAE3B205182AF0028A233 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E762DDED2067F0AF008B5E23 /* QuotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesView.swift; sourceTree = "<group>"; };
+		E762DDF02067F532008B5E23 /* RonSwansonQuotesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RonSwansonQuotesService.swift; sourceTree = "<group>"; };
+		E762DDF22067F5A9008B5E23 /* ServiceInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInjection.swift; sourceTree = "<group>"; };
 		E76F343E20518349004FAD75 /* QuotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotesViewController.swift; sourceTree = "<group>"; };
-		E76F343F20518349004FAD75 /* QuotesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotesViewModel.swift; sourceTree = "<group>"; };
 		E76F34422051834F004FAD75 /* NetInjection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetInjection.swift; sourceTree = "<group>"; };
 		E76F344520518356004FAD75 /* RonSwansonQuotesMoya.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RonSwansonQuotesMoya.swift; sourceTree = "<group>"; };
 		E76F344620518356004FAD75 /* RonSwansonQuotesNet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RonSwansonQuotesNet.swift; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 		E75AAE41205182B50028A233 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E762DDEF2067F51E008B5E23 /* Service */,
 				E76F344820518356004FAD75 /* DataModel */,
 				E76F344420518356004FAD75 /* Network */,
 			);
@@ -115,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				E76F34422051834F004FAD75 /* NetInjection.swift */,
+				E762DDF22067F5A9008B5E23 /* ServiceInjection.swift */,
 			);
 			path = Injection;
 			sourceTree = "<group>";
@@ -123,9 +129,17 @@
 			isa = PBXGroup;
 			children = (
 				E76F343E20518349004FAD75 /* QuotesViewController.swift */,
-				E76F343F20518349004FAD75 /* QuotesViewModel.swift */,
+				E762DDED2067F0AF008B5E23 /* QuotesView.swift */,
 			);
 			path = Quotes;
+			sourceTree = "<group>";
+		};
+		E762DDEF2067F51E008B5E23 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E762DDF02067F532008B5E23 /* RonSwansonQuotesService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		E76F344420518356004FAD75 /* Network */ = {
@@ -280,10 +294,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E75AAE30205182AF0028A233 /* AppDelegate.swift in Sources */,
-				E76F344120518349004FAD75 /* QuotesViewModel.swift in Sources */,
+				E762DDEE2067F0AF008B5E23 /* QuotesView.swift in Sources */,
 				E76F344B20518356004FAD75 /* RonSwansonQuotesNet.swift in Sources */,
 				E76F344A20518356004FAD75 /* RonSwansonQuotesMoya.swift in Sources */,
 				E76F344D20518356004FAD75 /* RonSwansonReply.swift in Sources */,
+				E762DDF32067F5A9008B5E23 /* ServiceInjection.swift in Sources */,
+				E762DDF12067F532008B5E23 /* RonSwansonQuotesService.swift in Sources */,
 				E76F344C20518356004FAD75 /* RonSwansonQuotesURLSession.swift in Sources */,
 				E76F344020518349004FAD75 /* QuotesViewController.swift in Sources */,
 				E76F34432051834F004FAD75 /* NetInjection.swift in Sources */,

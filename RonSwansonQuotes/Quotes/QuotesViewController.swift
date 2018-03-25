@@ -8,31 +8,19 @@
 
 import UIKit
 
-class QuotesViewController: UIViewController {
+class QuotesViewController: UIViewController, ServiceInjected {
     
-    @IBOutlet private var tableView: UITableView!
-    @IBOutlet private var activityIndicator: UIActivityIndicatorView!
-    
-    private let refreshControl = UIRefreshControl()
-    private let viewModel = QuotesViewModel()
+    private var quotesView: QuotesView? {
+        guard isViewLoaded else { return nil }
+        
+        return view as? QuotesView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.refreshControl = refreshControl
-        refreshControl.addTarget(self, action: #selector(refreshQuotes(_:)), for: .valueChanged)
-        refreshControl.tintColor = UIColor(red:0.137, green:0.341, blue:0.537, alpha:1.0)
-        refreshControl.attributedTitle = NSAttributedString(string: "Fetching Ron Swanson Quotes ...")
-        
-        viewModel.quotesUpdatedHandler = {
-            DispatchQueue.main.async { [weak self] in
-                
-                guard let strongSelf = self else { return }
-                    
-                strongSelf.tableView.reloadData()
-                strongSelf.refreshControl.endRefreshing()
-                strongSelf.activityIndicator.stopAnimating()
-            }
+        quotesView?.refreshQuotesHandler = { [weak self] in
+            self?.getQuotes()
         }
     }
     
@@ -41,40 +29,14 @@ class QuotesViewController: UIViewController {
         getQuotes()
     }
     
-    @objc
-    private func refreshQuotes(_ sender: Any) {
-        getQuotes()
-    }
-    
     private func getQuotes() {
-        
-        if !refreshControl.isRefreshing {
-            refreshControl.beginRefreshing()
+        quotesView?.isLoadingQuotes = true
+        ronSwansonQuotesService.getQuotes { (quotes) in
+            DispatchQueue.main.async { [weak self] in
+                
+                self?.quotesView?.isLoadingQuotes = false
+                self?.quotesView?.quotesViewModel = QuotesViewModel(quotes: quotes)
+            }
         }
-        activityIndicator.startAnimating()
-        
-        viewModel.getQuotes()
-    }
-}
-
-extension QuotesViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.quotes.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "QuoteCell", for: indexPath)
-        
-        guard indexPath.row < viewModel.quotes.count else {
-            cell.textLabel?.text = "Unknown"
-            return cell
-            
-        }
-        
-        let quote = viewModel.quotes[indexPath.row]
-        cell.textLabel?.text = quote
-        
-        return cell
     }
 }
