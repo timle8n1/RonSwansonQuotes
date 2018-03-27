@@ -15,6 +15,7 @@
 		E762DDEE2067F0AF008B5E23 /* QuotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E762DDED2067F0AF008B5E23 /* QuotesView.swift */; };
 		E762DDF12067F532008B5E23 /* RonSwansonQuotesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E762DDF02067F532008B5E23 /* RonSwansonQuotesService.swift */; };
 		E762DDF32067F5A9008B5E23 /* ServiceInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E762DDF22067F5A9008B5E23 /* ServiceInjection.swift */; };
+		E762DDF52067F823008B5E23 /* QuotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E762DDF42067F823008B5E23 /* QuotesViewModel.swift */; };
 		E76F344020518349004FAD75 /* QuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F343E20518349004FAD75 /* QuotesViewController.swift */; };
 		E76F34432051834F004FAD75 /* NetInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F34422051834F004FAD75 /* NetInjection.swift */; };
 		E76F344A20518356004FAD75 /* RonSwansonQuotesMoya.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F344520518356004FAD75 /* RonSwansonQuotesMoya.swift */; };
@@ -36,6 +37,7 @@
 		E762DDED2067F0AF008B5E23 /* QuotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesView.swift; sourceTree = "<group>"; };
 		E762DDF02067F532008B5E23 /* RonSwansonQuotesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RonSwansonQuotesService.swift; sourceTree = "<group>"; };
 		E762DDF22067F5A9008B5E23 /* ServiceInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInjection.swift; sourceTree = "<group>"; };
+		E762DDF42067F823008B5E23 /* QuotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewModel.swift; sourceTree = "<group>"; };
 		E76F343E20518349004FAD75 /* QuotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotesViewController.swift; sourceTree = "<group>"; };
 		E76F34422051834F004FAD75 /* NetInjection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetInjection.swift; sourceTree = "<group>"; };
 		E76F344520518356004FAD75 /* RonSwansonQuotesMoya.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RonSwansonQuotesMoya.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			children = (
 				E76F343E20518349004FAD75 /* QuotesViewController.swift */,
 				E762DDED2067F0AF008B5E23 /* QuotesView.swift */,
+				E762DDF42067F823008B5E23 /* QuotesViewModel.swift */,
 			);
 			path = Quotes;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				E75AAE30205182AF0028A233 /* AppDelegate.swift in Sources */,
 				E762DDEE2067F0AF008B5E23 /* QuotesView.swift in Sources */,
 				E76F344B20518356004FAD75 /* RonSwansonQuotesNet.swift in Sources */,
+				E762DDF52067F823008B5E23 /* QuotesViewModel.swift in Sources */,
 				E76F344A20518356004FAD75 /* RonSwansonQuotesMoya.swift in Sources */,
 				E76F344D20518356004FAD75 /* RonSwansonReply.swift in Sources */,
 				E762DDF32067F5A9008B5E23 /* ServiceInjection.swift in Sources */,

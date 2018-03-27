@@ -10,10 +10,6 @@ import UIKit
 
 typealias RefreshQuotesHandler = () -> Void
 
-struct QuotesViewModel {
-    let quotes: [String]
-}
-
 class QuotesView: UIView {
     
     var refreshQuotesHandler: RefreshQuotesHandler?
